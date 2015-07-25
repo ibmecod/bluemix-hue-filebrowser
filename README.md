@@ -37,15 +37,15 @@ What you need to get started:
    Note: An alternative approach is to use IBM Containers Extensions but this is deprecated, and is much harder to setup so we don't recommend using it. 
 3. Login into Bluemix and to IBM Containers  with the following sequence of commands:
 
-  `cf login`
+  `cf login`..
   `cf ic login`
 
 4. In the Bluemix dashboard at (http://bluemix.net) click on **START CONTAINERS**. If you've never used IBM Containers before you'll be prompted to provide a unique suffix for 
 your private image repository.
 5. Back on the command line,  copy the image to your private repository by issuing the following command   (note replace foobar with the unique suffix to your private repository)
-
-   `cf ic cpi djccarew/hue-filebrowser-bluemix  registry.ng.bluemix.net/foobar/hue-filebrowser-bluemix`
-
+```sh
+   cf ic cpi djccarew/hue-filebrowser-bluemix  registry.ng.bluemix.net/foobar/hue-filebrowser-bluemix
+```
 
 Getting the file browser up and running
 
@@ -77,11 +77,11 @@ Getting the file browser up and running
   3. Verify that you're able to navigate through the HDFS file system on your instance of IBM Analytics for Apache Hadoop Service. You'll have the permissions of the username specified in the service's meta data 
 
 ## Modifications made to original HUE 3.8.1 source code
-[../hue-3.8.1-bluemix/desktop/core/src/desktop/conf.py](https://github.com/ibmecod/bluemix-hue-filebrowser/blob/master/hue-3.8.1-bluemix/desktop/core/src/desktop/conf.py)
+[../hue-3.8.1-bluemix/desktop/core/src/desktop/conf.py](https://raw.githubusercontent.com/ibmecod/bluemix-hue-filebrowser/master/hue-3.8.1-bluemix/desktop/core/src/desktop/conf.py)
 Added another config object available via hue.ini that contains the password needed for Basic Authentication against the WebHDFS endpoint
 
-[../hue-3.8.1-bluemix/desktop/core/src/desktop/auth/views.py](../hue-3.8.1-bluemix/desktop/core/src/desktop/auth/views.py)
-Commented out code that tries to create a HDFS home directory for the username used in the HUE UI
+[../hue-3.8.1-bluemix/desktop/core/src/desktop/auth/views.py](https://raw.githubusercontent.com/ibmecod/bluemix-hue-filebrowser/master/hue-3.8.1-bluemix/desktop/core/src/desktop/auth/views.py)
+Commented out code that assumes the hue user is the hdfs user and tries to create a hdfs home directory 
 
 [../hue-3.8.1-bluemix/desktop/libs/hadoop/src/hadoop/fs/webhdfs.py](https://raw.githubusercontent.com/ibmecod/bluemix-hue-filebrowser/master/hue-3.8.1-bluemix/desktop/libs/hadoop/src/hadoop/fs/webhdfs.py)
 Modified code that accesses the WebHDFS URL to use Basic Authentication
