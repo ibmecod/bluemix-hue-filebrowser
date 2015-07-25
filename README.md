@@ -30,19 +30,19 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
 
 What you need to get started:
 
-1. A Bluemix account 
+- A Bluemix account 
     [Sign up](https://console.ng.bluemix.net/?cm_mmc=IBMEcoDWW-_-IIC-_-BluemixDay-_-BluemixDayAAAWebpage) in Bluemix, or use an existing account.
-2. A Docker client + CloudFoundry CLI setup on Windows, Mac or Linux (note that a Docker 1.6.x client is required)
+- A Docker client + CloudFoundry CLI setup on Windows, Mac or Linux (note that a Docker 1.6.x client is required)
    Follow the instructions for setting up the IBM Containers Plugin for  Cloud Foundry [here] (https://www.ng.bluemix.net/docs/containers/container_cli_cfic.html#container_cli_cfic)
    Note: An alternative approach is to use IBM Containers Extensions but this is deprecated, and is much harder to setup so we don't recommend using it. 
-3. Login into Bluemix and to IBM Containers  with the following sequence of commands:
+- Login into Bluemix and to IBM Containers  with the following sequence of commands:
 ```sh
   cf login
   cf ic login
 ```
-4. In the Bluemix dashboard at (http://bluemix.net) click on **START CONTAINERS**. If you've never used IBM Containers before you'll be prompted to provide a unique suffix for 
+- In the Bluemix dashboard at (http://bluemix.net) click on **START CONTAINERS**. If you've never used IBM Containers before you'll be prompted to provide a unique suffix for 
 your private image repository.
-5. Back on the command line,  copy the image to your private repository by issuing the following command   (note replace foobar with the unique suffix to your private repository)
+- Back on the command line,  copy the image to your private repository by issuing the following command   (note replace foobar with the unique suffix to your private repository)
 ```sh
    cf ic cpi djccarew/hue-filebrowser-bluemix  registry.ng.bluemix.net/foobar/hue-filebrowser-bluemix
 ```
