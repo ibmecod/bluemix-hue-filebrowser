@@ -36,53 +36,53 @@ What you need to get started:
    Follow the instructions for setting up the IBM Containers Plugin for  Cloud Foundry [here] (https://www.ng.bluemix.net/docs/containers/container_cli_cfic.html#container_cli_cfic)
    Note: An alternative approach is to use IBM Containers Extensions but this is deprecated, and is much harder to setup so we don't recommend using it. 
 3. Login into Bluemix and to IBM Containers  with the following sequence of commands:
-  ```sh
-  cf login
-  cf ic login
-  ```
+
+  `cf login`
+  `cf ic login`
+
 4. In the Bluemix dashboard at (http://bluemix.net) click on **START CONTAINERS**. If you've never used IBM Containers before you'll be prompted to provide a unique suffix for 
 your private image repository.
 5. Back on the command line,  copy the image to your private repository by issuing the following command   (note replace foobar with the unique suffix to your private repository)
-  ```sh
-  cf ic cpi djccarew/hue-filebrowser-bluemix  registry.ng.bluemix.net/foobar/hue-filebrowser-bluemix
-  ```
+
+   `cf ic cpi djccarew/hue-filebrowser-bluemix  registry.ng.bluemix.net/foobar/hue-filebrowser-bluemix`
+
 
 Getting the file browser up and running
 
 ### 1. Create a Bluemix app with the IBM Analytics for Apache Hadoop Service
 
- i. In the Bluemix dashboard click on **CREATE APP**
- ii. Click on **Web**
- iii. Click on **SDK for Node.js**
- iv. Click on **CONTINUE**
- v. Give the app a system wide unique name and click **FINISH**
- vi. When the message indicates that your app has started, click on the **Back to Dashboard** link 
- vii. Under **Applications** click on your application's rectangle
- viii. Click on **ADD A SERVICE OR API**, and then scroll down to the **Data & Analytics** section
- ix. Click on **Analytics for Apache Hadoop** and then click **CREATE**
- x. When the message indicates that your app has restarted, click on the **Back to Dashboard** link 
+  1. In the Bluemix dashboard click on **CREATE APP**
+  2. Click on **Web**
+  3. Click on **SDK for Node.js**
+  4. Click on **CONTINUE**
+  5. Give the app a system wide unique name and click **FINISH**
+  6. When the message indicates that your app has started, click on the **Back to Dashboard** link 
+  7. Under **Applications** click on your application's rectangle
+  8. Click on **ADD A SERVICE OR API**, and then scroll down to the **Data & Analytics** section
+  9. Click on **Analytics for Apache Hadoop** and then click **CREATE**
+  10. When the message indicates that your app has restarted, click on the **Back to Dashboard** link 
 
 ### 2. Create a running instance of the Docker image
- i. In the Bluemix dashboard click on **START CONTAINERS**
- ii. Click on the icon for the *hue-filebrowser-bluemix* image
- iii. Give the container a name and select **Request and Bind Public IP** under **Public IP Address**
- iv. Enter *8000* under **Public Ports**
- v. Expand **Advanced Options** and select the app you created in the previous section
- vi. Click **CREATE** and wait until the container shows as being started
- vii. Note the Public IP assigned to the container once it has been started  ()
+  1. In the Bluemix dashboard click on **START CONTAINERS**
+  2. Click on the icon for the *hue-filebrowser-bluemix* image
+  3. Give the container a name and select **Request and Bind Public IP** under **Public IP Address**
+  4. Enter *8000* under **Public Ports**
+  5. Expand **Advanced Options** and select the app you created in the previous section
+  6. Click **CREATE** and wait until the container shows as being started
+  7. Note the Public IP assigned to the container once it has been started  ()
 
 ### 3. Running the HUE File Browser
- i. Enter the URL [Container IP]:8000/filebrowser where *[Container IP]* is the IP bound  to the  container. For example if the IP is 136.168.88.76 the URL would be *http://136.168.88.76:8000/filebrowser* 
- ii. Enter `hue` as the username (note no password is required and any username will do )
- iii. Verify that you're able to navigate through the HDFS file system on your instance of IBM Analytics for Apache Hadoop Service. You'll have the permissions of the username specified in the service's meta data 
+  1. Enter the URL [Container IP]:8000/filebrowser where *[Container IP]* is the IP bound  to the  container. For example if the IP is 136.168.88.76 the URL would be *http://136.168.88.76:8000/filebrowser* 
+  2. Enter `hue` as the username (note no password is required and any username will do )
+  3. Verify that you're able to navigate through the HDFS file system on your instance of IBM Analytics for Apache Hadoop Service. You'll have the permissions of the username specified in the service's meta data 
 
 ## Modifications made to original HUE 3.8.1 source code
-[../hue-3.8.1-bluemix/desktop/core/src/desktop/conf.py](../hue-3.8.1-bluemix/desktop/core/src/desktop/conf.py)
+[../hue-3.8.1-bluemix/desktop/core/src/desktop/conf.py](https://github.com/ibmecod/bluemix-hue-filebrowser/blob/master/hue-3.8.1-bluemix/desktop/core/src/desktop/conf.py)
 Added another config object available via hue.ini that contains the password needed for Basic Authentication against the WebHDFS endpoint
 
 [../hue-3.8.1-bluemix/desktop/core/src/desktop/auth/views.py](../hue-3.8.1-bluemix/desktop/core/src/desktop/auth/views.py)
 Commented out code that tries to create a HDFS home directory for the username used in the HUE UI
 
-[../hue-3.8.1-bluemix/desktop/libs/hadoop/src/hadoop/fs/webhdfs.py](../hue-3.8.1-bluemix/desktop/libs/hadoop/src/hadoop/fs/webhdfs.py)
+[../hue-3.8.1-bluemix/desktop/libs/hadoop/src/hadoop/fs/webhdfs.py](https://raw.githubusercontent.com/ibmecod/bluemix-hue-filebrowser/master/hue-3.8.1-bluemix/desktop/libs/hadoop/src/hadoop/fs/webhdfs.py)
 Modified code that accesses the WebHDFS URL to use Basic Authentication
 
