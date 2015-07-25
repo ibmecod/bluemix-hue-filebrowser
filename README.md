@@ -26,15 +26,13 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
 > Note that additional tweaking (a la the file browser) may be required to get the other apps running as well. 
 
 
-## Running the image in IBM Bluemix
-
-What you need to get started:
+## What you need to get started
 
 - A Bluemix account 
     [Sign up](https://console.ng.bluemix.net/?cm_mmc=IBMEcoDWW-_-IIC-_-BluemixDay-_-BluemixDayAAAWebpage) in Bluemix, or use an existing account.
-- A Docker client + CloudFoundry CLI setup on Windows, Mac or Linux (note that a Docker 1.6.x client is required)
+- A Docker client + CloudFoundry CLI setup on Windows, Mac or Linux 
    Follow the instructions for setting up the IBM Containers Plugin for  Cloud Foundry [here] (https://www.ng.bluemix.net/docs/containers/container_cli_cfic.html#container_cli_cfic)
-   Note: An alternative approach is to use IBM Containers Extensions but this is deprecated, and is much harder to setup so we don't recommend using it. 
+   *Note: The Docker binary that you are told to download must be Docker 1.6.x. On Windows it must be renamed to **docker.exe** and be in the PATH. On Mac it must be renamed to **docker**, made executable and be in the PATH.*
 - Login into Bluemix and to IBM Containers  with the following sequence of commands:
 ```sh
   cf login
@@ -47,7 +45,7 @@ your private image repository.
    cf ic cpi djccarew/hue-filebrowser-bluemix  registry.ng.bluemix.net/foobar/hue-filebrowser-bluemix
 ```
 
-## Getting the file browser up and running
+## Getting the HUE file browser image  up and running
 
 ### 1. Create a Bluemix app with the IBM Analytics for Apache Hadoop Service
 
@@ -67,12 +65,12 @@ your private image repository.
   2. Click on the icon for the *hue-filebrowser-bluemix* image
   3. Give the container a name and select **Request and Bind Public IP** under **Public IP Address**
   4. Enter *8000* under **Public Ports**
-  5. Expand **Advanced Options** and select the app you created in the previous section
+  5. Expand **Advanced Options** and select the app you created in the previous section under **Service Binding**
   6. Click **CREATE** and wait until the container shows as being started
-  7. Note the Public IP assigned to the container once it has been started  ()
+  7. Note the Public IP assigned to the container once it has been started
 
 ### 3. Running the HUE File Browser
-  1. Enter the URL [Container IP]:8000/filebrowser where *[Container IP]* is the IP bound  to the  container. For example if the IP is 136.168.88.76 the URL would be *http://136.168.88.76:8000/filebrowser* 
+  1. Enter the URL *[Container IP]:8000/filebrowser* where *[Container IP]* is the IP bound  to the  container. For example if the IP is *136.168.88.76* the URL would be *http://136.168.88.76:8000/filebrowser* 
   2. Enter `hue` as the username (note no password is required and any username will do )
   3. Verify that you're able to navigate through the HDFS file system on your instance of IBM Analytics for Apache Hadoop Service. You'll have the permissions of the username specified in the service's meta data 
 
