@@ -36,10 +36,10 @@ What you need to get started:
    Follow the instructions for setting up the IBM Containers Plugin for  Cloud Foundry [here] (https://www.ng.bluemix.net/docs/containers/container_cli_cfic.html#container_cli_cfic)
    Note: An alternative approach is to use IBM Containers Extensions but this is deprecated, and is much harder to setup so we don't recommend using it. 
 3. Login into Bluemix and to IBM Containers  with the following sequence of commands:
-
-  `cf login`..
-  `cf ic login`
-
+```sh
+  cf login
+  cf ic login
+```
 4. In the Bluemix dashboard at (http://bluemix.net) click on **START CONTAINERS**. If you've never used IBM Containers before you'll be prompted to provide a unique suffix for 
 your private image repository.
 5. Back on the command line,  copy the image to your private repository by issuing the following command   (note replace foobar with the unique suffix to your private repository)
