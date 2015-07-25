@@ -47,7 +47,7 @@ your private image repository.
    cf ic cpi djccarew/hue-filebrowser-bluemix  registry.ng.bluemix.net/foobar/hue-filebrowser-bluemix
 ```
 
-Getting the file browser up and running
+## Getting the file browser up and running
 
 ### 1. Create a Bluemix app with the IBM Analytics for Apache Hadoop Service
 
