@@ -59,16 +59,16 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
 
 ### 1. Create a Bluemix app with the IBM Analytics for Apache Hadoop Service
 
-  i. *Note: If you have an existing Bluemix app that you want to bind to the Analytics for Apache Hadoop Service,  skip to Step 7.*  In the Bluemix dashboard click on **CREATE APP**
-  ii. Click on **Web**<br/>
-  iii. Click on **SDK for Node.js**
-  iv. Click on **CONTINUE**
-  v. Give the app a system wide unique name and click **FINISH**
-  vi. When the message indicates that your app has started, click on the **Back to Dashboard** link 
-  vii. Under **Applications** click on your application's rectangle
-  viii. Click on **ADD A SERVICE OR API**, and then scroll down to the **Data & Analytics** section
-  ix. Click on **Analytics for Apache Hadoop** and then click **CREATE**
-  x. Click on **RESTAGE** when prompted.  When the message indicates that your app has restarted, click on the **Back to Dashboard** link 
+  i. *Note: If you have an existing Bluemix app that you want to bind to the Analytics for Apache Hadoop Service,  skip to Step 7.*  In the Bluemix dashboard click on **CREATE APP**  
+  ii. Click on **Web**  
+  iii. Click on **SDK for Node.js**  
+  iv. Click on **CONTINUE**  
+  v. Give the app a system wide unique name and click **FINISH**  
+  vi. When the message indicates that your app has started, click on the **Back to Dashboard** link   
+  vii. Under **Applications** click on your application's rectangle  
+  viii. Click on **ADD A SERVICE OR API**, and then scroll down to the **Data & Analytics** section  
+  ix. Click on **Analytics for Apache Hadoop** and then click **CREATE**  
+  x. Click on **RESTAGE** when prompted.  When the message indicates that your app has restarted, click on the **Back to Dashboard** link   
 
 ### 2. Create a running instance of the Docker image
   1. In the Bluemix dashboard click on **START CONTAINERS**
