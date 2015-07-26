@@ -31,23 +31,23 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
 - A Bluemix account 
     [Sign up](https://console.ng.bluemix.net/?cm_mmc=IBMEcoDWW-_-IIC-_-BluemixDay-_-BluemixDayAAAWebpage) in Bluemix, or use an existing account.
 - A Docker 1.6.x  client 
-  -On 32bit Windows download the client from [here](https://get.docker.com/builds/Windows/i386/docker-1.6.2.exe), rename it to **docker.exe** and put it somewhere in your PATH
-  -On 64bit Windows download the client from [here](https://get.docker.com/builds/Windows/x86_64/docker-1.6.2.exe), rename it to **docker.exe** and put it somewhere in your PATH  
-  -On 32bit Linux download the client from [here](https://get.docker.com/builds/Linux/i386/docker-1.6.2), rename it to **docker**, make it executable  and put it somewhere in your PATH
-  -On 64bit Linux download the client from [here](https://get.docker.com/builds/Linux/x86_64/docker-1.6.2), rename it to **docker**, make it executable  and put it somewhere in your PATH
-  -On 32bit Mac OS X download the client from [here](https://get.docker.com/builds/Darwin/i386/docker-1.6.2), rename it to **docker**, make it executable  and put it somewhere in your PATH
-  -On 64bit Mac OS X download the client from [here](https://get.docker.com/builds/Darwin/x86_64/docker-1.6.2), rename it to **docker**, make it executable  and put it somewhere in your PATH 
+  - On 32bit Windows download the client from [here](https://get.docker.com/builds/Windows/i386/docker-1.6.2.exe), rename it to **docker.exe** and put it somewhere in your PATH
+  - On 64bit Windows download the client from [here](https://get.docker.com/builds/Windows/x86_64/docker-1.6.2.exe), rename it to **docker.exe** and put it somewhere in your PATH  
+  - On 32bit Linux download the client from [here](https://get.docker.com/builds/Linux/i386/docker-1.6.2), rename it to **docker**, make it executable  and put it somewhere in your PATH
+  - On 64bit Linux download the client from [here](https://get.docker.com/builds/Linux/x86_64/docker-1.6.2), rename it to **docker**, make it executable  and put it somewhere in your PATH
+  - On 32bit Mac OS X download the client from [here](https://get.docker.com/builds/Darwin/i386/docker-1.6.2), rename it to **docker**, make it executable  and put it somewhere in your PATH
+  - On 64bit Mac OS X download the client from [here](https://get.docker.com/builds/Darwin/x86_64/docker-1.6.2), rename it to **docker**, make it executable  and put it somewhere in your PATH 
 - Cloud Foundry CLI 6.11.3 or later
-   -If you already have the Cloud Foundry CLI verify the version is at least 6.11.3 via the `cf -v` command. If you need to install it get the appropriate one for your platform from [here] (https://github.com/cloudfoundry/cli/releases)
+   - If you already have the Cloud Foundry CLI verify the version is at least 6.11.3 via the `cf -v` command. If you need to install it get the appropriate one for your platform from [here] (https://github.com/cloudfoundry/cli/releases)
 - IBM Containers plug-in for Cloud Foundry
-   -Follow the instructions for setting up the IBM Containers Plugin for  Cloud Foundry [here] (https://www.ng.bluemix.net/docs/containers/container_cli_cfic.html#container_cli_cfic)   
+   - Follow the instructions for setting up the IBM Containers Plugin for  Cloud Foundry [here] (https://www.ng.bluemix.net/docs/containers/container_cli_cfic.html#container_cli_cfic)   
 - Verify you can login into Bluemix and to IBM Containers from the command line  with the following sequence of commands:
 ```sh
   cf login
   cf ic login
 ```
 - Setup the unique path to your private IBM Containers repository
-   -In the Bluemix dashboard at (http://bluemix.net) click on **START CONTAINERS**. If you've never used IBM Containers before you'll be prompted to provide a unique suffix for your private image repository.
+   - In the Bluemix dashboard at (http://bluemix.net) click on **START CONTAINERS**. If you've never used IBM Containers before you'll be prompted to provide a unique suffix for your private image repository.
 - Build the image in your private repository 
   - Back on the command line,   issue the following command   (note replace *foobar* with the unique suffix to your private repository)
 ```sh
@@ -77,7 +77,9 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
   4. Enter *8000* under **Public Ports**
   5. Expand **Advanced Options** and select the app you created in the previous section under **Service Binding**
   6. Click **CREATE** and wait until the container shows as being started
-  7. Note the Public IP assigned to the container once it has been started
+  7. Note the Public IP assigned to the container once it has been started and make sure it's been mapped to app bound to your instance of the IBM Analytics for Apache Hadoop Service
+  
+   ![hue filebrowser screenshot](/screenshots/runningcontainer.png)
 
 ### 3. Running the HUE File Browser
   1. Enter the URL *[Container IP]:8000/filebrowser* where *[Container IP]* is the IP bound  to the  container. For example if the IP is *136.168.88.76* the URL would be *http://136.168.88.76:8000/filebrowser* 
@@ -89,12 +91,14 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
 	 
 ## Running the HUE file browser image in another Docker environment 
 
-### 1. Build the image in the other Docker environment with the command
+### 1. Build the image
+   1.  In the other Docker environment with the command
 ```sh
    docker build -t your_tag_name github.com/ibmecod/bluemix-hue-filebrowser
 ```
 
-### 2. Follow instructions in step 1 in previous section to bind a Bluemix application to an instance of the Analytics for Apache Hadoop Service
+### 2. Create a Bluemix app with the IBM Analytics for Apache Hadoop Service
+   1. Follow the  instructions in step 1 of the  previous section 
 
 ### 3. Get the Service instance credentials
   1. In the Bluemix Dashboard under **Applications** click on your application's rectangle
@@ -107,11 +111,16 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
 	 - *WEBHDFS_PASSWORD* set to  the password from the service credentials 
 	 - *WEBHDFS_URL* set to the WebHDFS URL from  the service credentials
  
-### 5. run the HUE File Browser by  following  Step 3 in the previous section using the appropriate IP Address for  the Docker daemon  and the port that is mapped to port 8000 of the running image
-
+### 5. Run the HUE File Browser 
+   1. Follow  Step 3 in the previous section using the appropriate IP Address for  the Docker daemon  and the port that is mapped to port 8000 of the running image
+   
 ## Troubleshooting 
 The HUE filebrowser will not start if the credentials for the Analytics for Apache Hadoop Service are not discoverable via VCAP_SERVICES or the alternative env vars noted the previous section.
-If you're unable to access the URL of the running container that is the most likely cause. The command `cf ic logs container_name` will give you access to the logs of the running container.
+
+If you're unable to access the URL of the running container that is the most likely cause.
+
+The command `cf ic logs container_name` will give you access to the logs of the running container.
+
 If the service credentials are found (in VCAP_SERVICES or the alternate  env vars) the log will contain something similar to the following:
 ```sh
 Validating models...
@@ -122,8 +131,9 @@ Django version 1.6.10, using settings 'desktop.settings'
 Starting the development server at http://0.0.0.0:8000/
 Quit the server with CONTROL-C.
 ```
-If your logs look like this and the app isn't showing up in your browser, make sure a public  IP address is mapped to the running container. If it is mapped you may have to wait a couple of minutes because the public IP mapping 
-in IBM Containers may not always be instantaneous - so wait a  couple of minutes and try again.
+If your logs look like this and the app isn't showing up in your browse:
+ - Make sure a public  IP address is mapped to the running container
+ - If it is mapped you may have to wait a couple of minutes because the public IP mapping  in IBM Containers may not always be instantaneous. Wait a  couple of minutes and try again.
 
 If your service credentials are not found the logs  will look like the following 
 ```sh
