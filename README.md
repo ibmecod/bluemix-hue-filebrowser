@@ -107,9 +107,9 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
   
 ### 4. Run the Docker image
   i. Run the Docker image with the following env vars set to the service credentials noted   
-     - *WEBHDFS_USER* set to the username from the  service credentials 
-	 - *WEBHDFS_PASSWORD* set to  the password from the service credentials 
-	 - *WEBHDFS_URL* set to the WebHDFS URL from  the service credentials
+  - *WEBHDFS_USER* set to the username from the  service credentials 
+  - *WEBHDFS_PASSWORD* set to  the password from the service credentials 
+  - *WEBHDFS_URL* set to the WebHDFS URL from  the service credentials
  
 ### 5. Run the HUE File Browser 
    i. Follow  Step 3 in the previous section using the appropriate IP Address for  the Docker daemon  and the port that is mapped to port 8000 of the running image
