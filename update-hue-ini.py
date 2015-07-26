@@ -19,6 +19,7 @@ if "VCAP_SERVICES" in os.environ:
    if "Analytics for Apache Hadoop" in vcaps:
      username = vcaps["Analytics for Apache Hadoop"][0]["credentials"]["userid"]
      password = vcaps["Analytics for Apache Hadoop"][0]["credentials"]["password"]
+     webhdfsurl = vcaps["Analytics for Apache Hadoop"][0]["credentials"]["WebhdfsUrl"]
 
 else:
    if "WEBHDFS_USER" in os.environ:
