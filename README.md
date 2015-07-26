@@ -106,7 +106,7 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
   iii. Note the values of the username, password and WebHDFS URL  
   
 ### 4. Run the Docker image
-  i. Run the Docker image with the following env vars set to the service credentials noted 
+  i. Run the Docker image with the following env vars set to the service credentials noted   
      - *WEBHDFS_USER* set to the username from the  service credentials 
 	 - *WEBHDFS_PASSWORD* set to  the password from the service credentials 
 	 - *WEBHDFS_URL* set to the WebHDFS URL from  the service credentials
