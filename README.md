@@ -59,7 +59,7 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
 
 ### 1. Create a Bluemix app with the IBM Analytics for Apache Hadoop Service
 
-  i. *Note: If you have an existing Bluemix app that you want to bind to the Analytics for Apache Hadoop Service,  skip to Step 7.*  In the Bluemix dashboard click on **CREATE APP**  
+  i. *Note: If you have an existing Bluemix app that you want to bind to the Analytics for Apache Hadoop Service,  skip to Step vii.*  In the Bluemix dashboard click on **CREATE APP**  
   ii. Click on **Web**  
   iii. Click on **SDK for Node.js**  
   iv. Click on **CONTINUE**  
@@ -71,20 +71,20 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
   x. Click on **RESTAGE** when prompted.  When the message indicates that your app has restarted, click on the **Back to Dashboard** link   
 
 ### 2. Create a running instance of the Docker image
-  1. In the Bluemix dashboard click on **START CONTAINERS**
-  2. Click on the icon for the *hue-filebrowser-bluemix* image
-  3. Give the container a name and select **Request and Bind Public IP** under **Public IP Address**
-  4. Enter *8000* under **Public Ports**
-  5. Expand **Advanced Options** and select the app you created in the previous section under **Service Binding**
-  6. Click **CREATE** and wait until the container shows as being started
-  7. Note the Public IP assigned to the container once it has been started and make sure it's been mapped to the app bound to your instance of the IBM Analytics for Apache Hadoop Service
+  i. In the Bluemix dashboard click on **START CONTAINERS**  
+  ii. Click on the icon for the *hue-filebrowser-bluemix* image  
+  iii. Give the container a name and select **Request and Bind Public IP** under **Public IP Address**   
+  iv. Enter *8000* under **Public Ports**  
+  v. Expand **Advanced Options** and select the app you created in the previous section under **Service Binding**
+  vi. Click **CREATE** and wait until the container shows as being started    
+  vii. Note the Public IP assigned to the container once it has been started and make sure it's been mapped to the app bound to your instance of the IBM Analytics for Apache Hadoop Service  
   
    ![hue filebrowser screenshot](/screenshots/runningcontainer.png)
 
 ### 3. Running the HUE File Browser
-  1. Enter the URL *[Container IP]:8000/filebrowser* where *[Container IP]* is the IP bound  to the  container. For example if the IP is *136.168.88.76* the URL would be *http://136.168.88.76:8000/filebrowser* 
-  2. Enter `hue` as the username (note no password is required and any username will do )
-  3. Verify that you're able to navigate through the HDFS file system on your instance of IBM Analytics for Apache Hadoop Service. You'll have the permissions of the username specified in the service's meta data 
+  i. Enter the URL *[Container IP]:8000/filebrowser* where *[Container IP]* is the IP bound  to the  container. For example if the IP is *136.168.88.76* the URL would be *http://136.168.88.76:8000/filebrowser*   
+  ii. Enter `hue` as the username (note no password is required and any username will do )  
+  iii. Verify that you're able to navigate through the HDFS file system on your instance of IBM Analytics for Apache Hadoop Service. You'll have the permissions of the username specified in the service's meta data   
      
      ![hue filebrowser screenshot](/screenshots/filebrowser.png)
 	 
@@ -92,27 +92,27 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
 ## Running the HUE file browser image in another Docker environment 
 
 ### 1. Build the image
-   1.  In the other Docker environment run the command
+   i.  In the other Docker environment run the command  
 ```sh
    docker build -t your_tag_name github.com/ibmecod/bluemix-hue-filebrowser
 ```
 
 ### 2. Create a Bluemix app with the IBM Analytics for Apache Hadoop Service
-   1. Follow the  instructions in step 1 of the  previous section 
+   i. Follow the  instructions in step 1 of the  previous section    
 
 ### 3. Get the Service instance credentials
-  1. In the Bluemix Dashboard under **Applications** click on your application's rectangle
-  2. Scroll down to the bound Analytics for Apache Hadoop Service and click on **Show Credentials** 
-  3. Note the values of the username, password and WebHDFS URL
+  i. In the Bluemix Dashboard under **Applications** click on your application's rectangle  
+  ii. Scroll down to the bound Analytics for Apache Hadoop Service and click on **Show Credentials**   
+  iii. Note the values of the username, password and WebHDFS URL  
   
 ### 4. Run the Docker image
-  1. Run the Docker image with the following env vars set to the service credentials noted 
+  i. Run the Docker image with the following env vars set to the service credentials noted 
      - *WEBHDFS_USER* set to the username from the  service credentials 
 	 - *WEBHDFS_PASSWORD* set to  the password from the service credentials 
 	 - *WEBHDFS_URL* set to the WebHDFS URL from  the service credentials
  
 ### 5. Run the HUE File Browser 
-   1. Follow  Step 3 in the previous section using the appropriate IP Address for  the Docker daemon  and the port that is mapped to port 8000 of the running image
+   i. Follow  Step 3 in the previous section using the appropriate IP Address for  the Docker daemon  and the port that is mapped to port 8000 of the running image
    
 ## Troubleshooting 
 The HUE filebrowser will not start if the credentials for the Analytics for Apache Hadoop Service are not discoverable via VCAP_SERVICES or the alternative env vars noted the previous section.
