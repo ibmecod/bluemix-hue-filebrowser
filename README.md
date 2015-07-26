@@ -77,7 +77,7 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
   4. Enter *8000* under **Public Ports**
   5. Expand **Advanced Options** and select the app you created in the previous section under **Service Binding**
   6. Click **CREATE** and wait until the container shows as being started
-  7. Note the Public IP assigned to the container once it has been started and make sure it's been mapped to app bound to your instance of the IBM Analytics for Apache Hadoop Service
+  7. Note the Public IP assigned to the container once it has been started and make sure it's been mapped to the app bound to your instance of the IBM Analytics for Apache Hadoop Service
   
    ![hue filebrowser screenshot](/screenshots/runningcontainer.png)
 
@@ -92,7 +92,7 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
 ## Running the HUE file browser image in another Docker environment 
 
 ### 1. Build the image
-   1.  In the other Docker environment with the command
+   1.  In the other Docker environment run the command
 ```sh
    docker build -t your_tag_name github.com/ibmecod/bluemix-hue-filebrowser
 ```
@@ -131,7 +131,7 @@ Django version 1.6.10, using settings 'desktop.settings'
 Starting the development server at http://0.0.0.0:8000/
 Quit the server with CONTROL-C.
 ```
-If your logs look like this and the app isn't showing up in your browse:
+If your logs look like this and the app isn't showing up in your browser:
  - Make sure a public  IP address is mapped to the running container
  - If it is mapped you may have to wait a couple of minutes because the public IP mapping  in IBM Containers may not always be instantaneous. Wait a  couple of minutes and try again.
 
