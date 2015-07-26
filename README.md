@@ -86,7 +86,7 @@ another Docker environment the credentials and URLs to access the IBM Analytics 
   ii. Enter `hue` as the username (note no password is required and any username will do )  
   iii. Verify that you're able to navigate through the HDFS file system on your instance of IBM Analytics for Apache Hadoop Service. You'll have the permissions of the username specified in the service's meta data   
      
-     ![hue filebrowser screenshot](/screenshots/filebrowser.png)
+   ![hue filebrowser screenshot](/screenshots/filebrowser.png)
 	 
 	 
 ## Running the HUE file browser image in another Docker environment 
