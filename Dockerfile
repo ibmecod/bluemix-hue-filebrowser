@@ -38,6 +38,15 @@ ADD hue-3.8.1-bluemix /data/install/hue-3.8.1-bluemix
 # Uncomment this to write debug messages from Hue to stderr
 #ENV DESKTOP_DEBUG true
 
+# Need to add this to the import search path since we're sticking hueversion.py here 
+ENV PYTHONPATH /data/install
+
+# Remove hueversion.py symlinks and use a file containing the version info instead
+RUN \
+   find /data/install/hue-3.8.1-bluemix -name hueversion.py -exec rm {} \;
+RUN \
+   cp /data/install/hue-3.8.1-bluemix/VERSION  /data/install/hueversion.py
+
 # Install Hue
 RUN \
   cd /data/install/hue-3.8.1-bluemix && make install && rm -fr /data/install/hue-3.8.1-bluemix
@@ -45,6 +54,7 @@ RUN \
 # Add files to customize Hue config
 ADD update-hue-ini.py /data/install/update-hue-ini.py
 ADD hue-template.ini /data/install/hue-template.ini
+
 
 # Script to start HUE
 ADD start-hue.sh /data/install/start-hue.sh
