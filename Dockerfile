@@ -39,13 +39,13 @@ ADD hue-3.8.1-bluemix.tar.gz /data/install
 #ENV DESKTOP_DEBUG true
 
 # Need to add this to the import search path since we're sticking hueversion.py here 
-ENV PYTHONPATH /data/install
+#ENV PYTHONPATH /data/install
 
 # Remove hueversion.py symlinks and use a file containing the version info instead
-RUN \
-   find /data/install/hue-3.8.1-bluemix -name hueversion.py -exec rm {} \;
-RUN \
-   cp /data/install/hue-3.8.1-bluemix/VERSION  /data/install/hueversion.py
+#RUN \
+#   find /data/install/hue-3.8.1-bluemix -name hueversion.py -exec rm {} \;
+#RUN \
+#   cp /data/install/hue-3.8.1-bluemix/VERSION  /data/install/hueversion.py
 
 # Install Hue
 RUN \
