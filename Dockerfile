@@ -3,7 +3,7 @@
 #
 #
 # Pull base image.
-FROM ubuntu:14.04
+FROM ubuntu:14.04.2
 
 MAINTAINER David Carew <carew@us.ibm.com>
 
@@ -33,7 +33,7 @@ RUN mkdir install
 
 
 # Copy Hue prod distribution with Bluemix changes
-ADD hue-3.8.1-bluemix /data/install/hue-3.8.1-bluemix
+ADD hue-3.8.1-bluemix.tar.gz /data/install
 
 # Uncomment this to write debug messages from Hue to stderr
 #ENV DESKTOP_DEBUG true
