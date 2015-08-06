@@ -1,0 +1,567 @@
+# Spanish translations for Hue.
+# Copyright (C) 2012 Cloudera
+# This file is distributed under the same license as the Hue project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VERSIÓN DEL PROYECTO\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2015-07-19 15:14-0700\n"
+"PO-Revision-Date: 2012-07-30 18:50-0700\n"
+"Last-Translator: NOMBRE COMPLETO <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: src/spark/api.py:183 src/spark/api.py:198
+msgid "Notebook saved !"
+msgstr "¡Bloc de notas guardado!"
+
+#: src/spark/api.py:219
+msgid "Notebook closed !"
+msgstr "¡Bloc de notas cerrado!"
+
+#: src/spark/api.py:238
+#, fuzzy
+msgid "Statement closed !"
+msgstr "¡Bloc de notas cerrado!"
+
+#: src/spark/conf.py:38
+msgid "List of available types of snippets."
+msgstr "Lista de tipos de fragmentos de código disponibles."
+
+#: src/spark/conf.py:53
+msgid "Path to livy-assembly.jar"
+msgstr ""
+
+#: src/spark/conf.py:59
+msgid "Host address of the Livy Server."
+msgstr ""
+
+#: src/spark/conf.py:64
+msgid "Port of the Livy Server."
+msgstr ""
+
+#: src/spark/conf.py:69
+msgid "Configure livy to start with process, thread, or yarn workers"
+msgstr ""
+
+#: src/spark/conf.py:74
+msgid "Path to livy-assembly.jar inside HDFS"
+msgstr ""
+
+#: src/spark/conf.py:79
+msgid "Use impersonation when submitting livy jobs"
+msgstr ""
+
+#: src/spark/conf.py:85
+msgid "Experimental option to launch livy"
+msgstr ""
+
+#: src/spark/conf.py:113
+#, fuzzy
+msgid "The app won't work without a running Livy Spark Server"
+msgstr "La aplicación no funcionará sin un servidor de Job en ejecución"
+
+#: src/spark/decorators.py:48
+#, python-format
+msgid "Document %(id)s does not exist"
+msgstr ""
+
+#: src/spark/decorators.py:65
+#, python-format
+msgid "Job %(id)s does not exist"
+msgstr ""
+
+#: src/spark/views.py:59 src/spark/views.py:60
+msgid "Example: 1 + 1, or press CTRL + space"
+msgstr "Ejemplo: 1 + 1 o pulsar CTRL + Espacio"
+
+#: src/spark/views.py:61 src/spark/views.py:62
+msgid "Example: SELECT * FROM tablename, or press CTRL + space"
+msgstr "Ejemplo: SELECT * FROM nombre de tabla o pulse CTRL + espacio"
+
+#: src/spark/views.py:63
+msgid "<h2>This is a text snippet</h2>Type your text here"
+msgstr "<h2>Esto es un fragmento de texto</h2>Escriba el texto aquí"
+
+#: src/spark/views.py:133
+msgid "A POST request is required."
+msgstr ""
+
+#: src/spark/templates/editor.mako:24
+msgid "Query"
+msgstr "Consulta"
+
+#: src/spark/templates/editor.mako:139
+msgid "Execute all snippets"
+msgstr "Ejecutar todos los fragmentos"
+
+#: src/spark/templates/editor.mako:144
+msgid "Clear all results"
+msgstr "Borrar todos los resultados"
+
+#: src/spark/templates/editor.mako:149
+msgid "Display all Notebook content"
+msgstr ""
+
+#: src/spark/templates/editor.mako:157
+msgid "Edit"
+msgstr "Editar"
+
+#: src/spark/templates/editor.mako:161 src/spark/templates/editor.mako:777
+msgid "Sessions"
+msgstr ""
+
+#: src/spark/templates/editor.mako:167
+msgid "Save"
+msgstr "Guardar"
+
+#: src/spark/templates/editor.mako:167
+msgid "Saving..."
+msgstr "Guardando..."
+
+#: src/spark/templates/editor.mako:174
+#, fuzzy
+msgid "New Notebook"
+msgstr "Añadir un nuevo bloc de notas"
+
+#: src/spark/templates/editor.mako:178 src/spark/templates/notebooks.mako:23
+msgid "Notebooks"
+msgstr "Blocs de notas"
+
+#: src/spark/templates/editor.mako:198
+#, fuzzy
+msgid "Add a description..."
+msgstr "Descripción"
+
+#: src/spark/templates/editor.mako:211
+msgid "All Notebook content"
+msgstr ""
+
+#: src/spark/templates/editor.mako:217
+msgid "Close"
+msgstr ""
+
+#: src/spark/templates/editor.mako:222
+msgid "Toggle Assist"
+msgstr "Activar/desactivar ayuda"
+
+#: src/spark/templates/editor.mako:250
+msgid "Add a snippet to start your new notebook"
+msgstr "Añadir un fragmento para iniciar el nuevo bloc de notas"
+
+#: src/spark/templates/editor.mako:256
+msgid "Add a new snippet"
+msgstr "Añadir un nuevo fragmento"
+
+#: src/spark/templates/editor.mako:268
+msgid "Text"
+msgstr "Texto"
+
+#: src/spark/templates/editor.mako:358
+msgid "No logs available at this moment."
+msgstr ""
+
+#: src/spark/templates/editor.mako:367
+msgid "Success."
+msgstr "Correcto."
+
+#: src/spark/templates/editor.mako:371
+msgid "Success but empty results."
+msgstr "Correcto, pero resultados vacíos."
+
+#: src/spark/templates/editor.mako:375
+msgid "Loading..."
+msgstr "Cargando..."
+
+#: src/spark/templates/editor.mako:390 src/spark/templates/editor.mako:807
+msgid "Driver Cores"
+msgstr ""
+
+#: src/spark/templates/editor.mako:392
+msgid "Number of cores used by the driver, only in cluster mode (Default: 1)"
+msgstr ""
+
+#: src/spark/templates/editor.mako:398 src/spark/templates/editor.mako:783
+msgid "Executor Cores"
+msgstr ""
+
+#: src/spark/templates/editor.mako:400
+msgid "Number of cores per executor (Default: 1)"
+msgstr ""
+
+#: src/spark/templates/editor.mako:406
+msgid "Executors"
+msgstr ""
+
+#: src/spark/templates/editor.mako:408
+msgid "Number of executors to launch (Default: 2)"
+msgstr ""
+
+#: src/spark/templates/editor.mako:414
+msgid "Queue"
+msgstr ""
+
+#: src/spark/templates/editor.mako:416
+msgid "The YARN queue to submit to (Default: default)"
+msgstr ""
+
+#: src/spark/templates/editor.mako:420
+msgid "e.g. archive.dat"
+msgstr ""
+
+#: src/spark/templates/editor.mako:420
+msgid "Archives"
+msgstr ""
+
+#: src/spark/templates/editor.mako:420
+msgid "Archive"
+msgstr ""
+
+#: src/spark/templates/editor.mako:421
+msgid "e.g. file.dat"
+msgstr ""
+
+#: src/spark/templates/editor.mako:421
+#, fuzzy
+msgid "Files"
+msgstr "Líneas"
+
+#: src/spark/templates/editor.mako:421
+msgid "File"
+msgstr ""
+
+#: src/spark/templates/editor.mako:422
+msgid "e.g. foo"
+msgstr ""
+
+#: src/spark/templates/editor.mako:422
+#, fuzzy
+msgid "Settings"
+msgstr "Mostrar ajustes"
+
+#: src/spark/templates/editor.mako:422
+#, fuzzy
+msgid "Setting"
+msgstr "clasificando"
+
+#: src/spark/templates/editor.mako:480
+msgid "Hide columns"
+msgstr "Ocultar columnas"
+
+#: src/spark/templates/editor.mako:480
+msgid "columns"
+msgstr "columnas"
+
+#: src/spark/templates/editor.mako:492
+msgid "Show columns"
+msgstr "Mostrar columnas"
+
+#: src/spark/templates/editor.mako:495
+msgid "Hide"
+msgstr "Ocultar"
+
+#: src/spark/templates/editor.mako:516
+msgid "Hide settings"
+msgstr "Ocultar ajustes"
+
+#: src/spark/templates/editor.mako:522
+msgid "x-axis"
+msgstr "eje x"
+
+#: src/spark/templates/editor.mako:523
+msgid "region"
+msgstr "región"
+
+#: src/spark/templates/editor.mako:524
+msgid "latitude"
+msgstr "latitud"
+
+#: src/spark/templates/editor.mako:525
+msgid "legend"
+msgstr "leyenda"
+
+#: src/spark/templates/editor.mako:528 src/spark/templates/editor.mako:544
+#: src/spark/templates/editor.mako:551 src/spark/templates/editor.mako:558
+#: src/spark/templates/editor.mako:565
+msgid "Choose a column..."
+msgstr "Elegir una columna..."
+
+#: src/spark/templates/editor.mako:532
+msgid "y-axis"
+msgstr "eje y"
+
+#: src/spark/templates/editor.mako:533 src/spark/templates/editor.mako:535
+msgid "value"
+msgstr "valor"
+
+#: src/spark/templates/editor.mako:534
+msgid "longitude"
+msgstr "longitud"
+
+#: src/spark/templates/editor.mako:548
+msgid "label"
+msgstr "etiqueta"
+
+#: src/spark/templates/editor.mako:555
+msgid "scatter group"
+msgstr "dispersar grupo"
+
+#: src/spark/templates/editor.mako:562
+msgid "scatter size"
+msgstr "dispersar tamaño"
+
+#: src/spark/templates/editor.mako:569
+msgid "sorting"
+msgstr "clasificando"
+
+#: src/spark/templates/editor.mako:572
+msgid "No sorting"
+msgstr "Sin clasificación"
+
+#: src/spark/templates/editor.mako:573
+msgid "Sort ascending"
+msgstr "Clasificar en orden ascendente"
+
+#: src/spark/templates/editor.mako:574
+msgid "Sort descending"
+msgstr "Clasificar en orden descendente"
+
+#: src/spark/templates/editor.mako:581
+msgid "Show settings"
+msgstr "Mostrar ajustes"
+
+#: src/spark/templates/editor.mako:616 src/spark/templates/editor.mako:630
+msgid "Path"
+msgstr ""
+
+#: src/spark/templates/editor.mako:618
+msgid ""
+"Path to application jar, e.g. hdfs://localhost:8020/user/hue/oozie-"
+"examples.jar"
+msgstr ""
+
+#: src/spark/templates/editor.mako:622
+msgid "Class"
+msgstr ""
+
+#: src/spark/templates/editor.mako:624
+msgid "Class name of application, e.g. org.apache.oozie.example.SparkFileCopy"
+msgstr ""
+
+#: src/spark/templates/editor.mako:632
+msgid "Path to python file, e.g. script.py"
+msgstr ""
+
+#: src/spark/templates/editor.mako:636
+msgid "e.g. -foo=bar"
+msgstr ""
+
+#: src/spark/templates/editor.mako:636
+msgid "Arguments"
+msgstr ""
+
+#: src/spark/templates/editor.mako:636
+msgid "Argument"
+msgstr ""
+
+#: src/spark/templates/editor.mako:649
+msgid "Creating session"
+msgstr "Creando sesión"
+
+#: src/spark/templates/editor.mako:652
+msgid "CTRL + ENTER"
+msgstr "CTRL + INTRO"
+
+#: src/spark/templates/editor.mako:655
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/spark/templates/editor.mako:658
+msgid "Grid"
+msgstr "Cuadrícula"
+
+#: src/spark/templates/editor.mako:679
+msgid "Bars"
+msgstr "Barras"
+
+#: src/spark/templates/editor.mako:684
+msgid "Lines"
+msgstr "Líneas"
+
+#: src/spark/templates/editor.mako:689
+msgid "Pie"
+msgstr "Circular"
+
+#: src/spark/templates/editor.mako:694
+msgid "Scatter"
+msgstr "Dispersión"
+
+#: src/spark/templates/editor.mako:699
+msgid "Marker Map"
+msgstr "Map de marcador"
+
+#: src/spark/templates/editor.mako:704
+msgid "Gradient Map"
+msgstr "Map de gradiente"
+
+#: src/spark/templates/editor.mako:728
+msgid "Download first rows as CSV"
+msgstr "Descargar primeras filas como CSV"
+
+#: src/spark/templates/editor.mako:729
+msgid "CSV"
+msgstr "CSV"
+
+#: src/spark/templates/editor.mako:733
+msgid "Download first rows as XLS"
+msgstr "Descargar primeras filas como XLS"
+
+#: src/spark/templates/editor.mako:734
+msgid "Excel"
+msgstr "Excel"
+
+#: src/spark/templates/editor.mako:749
+msgid "Show Logs"
+msgstr "Mostrar los registros"
+
+#: src/spark/templates/editor.mako:758
+msgid "Choose a file"
+msgstr ""
+
+#: src/spark/templates/editor.mako:791
+msgid "Executor Memory"
+msgstr ""
+
+#: src/spark/templates/editor.mako:799
+msgid "Executor Count"
+msgstr ""
+
+#: src/spark/templates/editor.mako:815
+msgid "Driver Memory"
+msgstr ""
+
+#: src/spark/templates/editor.mako:821
+#, fuzzy
+msgid "Restart Session"
+msgstr "Creando sesión"
+
+#: src/spark/templates/editor.mako:822
+#, fuzzy
+msgid "Session"
+msgstr "región"
+
+#: src/spark/templates/editor.mako:882
+msgid "Paste or type a link"
+msgstr "Copiar o pegar un enlace"
+
+#: src/spark/templates/editor.mako:883
+msgid "Open in new window"
+msgstr "Abrir en una nueva ventana"
+
+#: src/spark/templates/editor.mako:1340 src/spark/templates/notebooks.mako:229
+msgid "No data available"
+msgstr "No hay datos disponibles"
+
+#: src/spark/templates/editor.mako:1341 src/spark/templates/notebooks.mako:233
+msgid "No matching records"
+msgstr "No hay registros coincidentes"
+
+#: src/spark/templates/editor.mako:1656
+msgid "Distribution"
+msgstr "Distribución"
+
+#: src/spark/templates/notebooks.mako:29
+msgid "Spark Editor"
+msgstr "Editor Spark"
+
+#: src/spark/templates/notebooks.mako:33
+msgid "Search for name, description, etc..."
+msgstr "Buscar nombre, descripción, etc."
+
+#: src/spark/templates/notebooks.mako:39
+msgid "Copy"
+msgstr "Copiar"
+
+#: src/spark/templates/notebooks.mako:43
+msgid "Delete"
+msgstr "Eliminar"
+
+#: src/spark/templates/notebooks.mako:47 src/spark/templates/notebooks.mako:49
+msgid "Share"
+msgstr "Compartir"
+
+#: src/spark/templates/notebooks.mako:53
+#, fuzzy
+msgid "Export"
+msgstr "Texto"
+
+#: src/spark/templates/notebooks.mako:59
+msgid "Create"
+msgstr "Crear"
+
+#: src/spark/templates/notebooks.mako:61
+msgid "Import"
+msgstr ""
+
+#: src/spark/templates/notebooks.mako:71
+msgid "Name"
+msgstr "Nombre"
+
+#: src/spark/templates/notebooks.mako:72
+msgid "Description"
+msgstr "Descripción"
+
+#: src/spark/templates/notebooks.mako:73
+msgid "Owner"
+msgstr "Propietario"
+
+#: src/spark/templates/notebooks.mako:74
+msgid "Last Modified"
+msgstr "Última modificación"
+
+#: src/spark/templates/notebooks.mako:111
+msgid "Delete the selected notebook(s)?"
+msgstr "¿Eliminar los blocs de notas seleccionados?"
+
+#: src/spark/templates/notebooks.mako:114
+msgid "No"
+msgstr "No"
+
+#: src/spark/templates/notebooks.mako:115
+msgid "Yes"
+msgstr "Sí"
+
+#: src/spark/templates/notebooks.mako:230
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Mostrando de _START_ a _END_ entradas de _TOTAL_"
+
+#: src/spark/templates/notebooks.mako:231
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Mostrando de 0 a 0 entradas de 0"
+
+#: src/spark/templates/notebooks.mako:232
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(filtrado de _MAX_ entradas totales)"
+
+#: src/spark/templates/notebooks.mako:235
+msgid "First"
+msgstr "Primero"
+
+#: src/spark/templates/notebooks.mako:236
+msgid "Last"
+msgstr "Último"
+
+#: src/spark/templates/notebooks.mako:237
+msgid "Next"
+msgstr "Siguiente"
+
+#: src/spark/templates/notebooks.mako:238
+msgid "Previous"
+msgstr "Anterior"
+

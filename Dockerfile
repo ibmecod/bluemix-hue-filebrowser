@@ -33,7 +33,8 @@ RUN mkdir install
 
 
 # Copy Hue prod distribution with Bluemix changes
-ADD hue-3.8.1-bluemix.tar.gz /data/install
+#ADD hue-3.8.1-bluemix.tar.gz /data/install
+ADD hue-3.8.1-bluemix /data/install/hue-3.8.1-bluemix
 
 # Uncomment this to write debug messages from Hue to stderr
 #ENV DESKTOP_DEBUG true
